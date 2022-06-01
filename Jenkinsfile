@@ -19,5 +19,5 @@ pipeline {
                 sh "kubectl get svc | grep ${env.BUILD_TAG}"
             }
         }
-      
+    }
     }
