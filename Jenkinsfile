@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {                
                 git 'https://github.com/SanjeebKar/assessment.git'
+                sh "git checkout sanjeeb"
                 sh "docker build -t jaibw/website004:${env.BUILD_TAG} ."
             }
         }
