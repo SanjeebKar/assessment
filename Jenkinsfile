@@ -1,10 +1,13 @@
 pipeline {
     agent any
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "M3"
+    }
     stages {
         stage('Build') {
             steps {                
                 git 'https://github.com/SanjeebKar/assessment.git'
-                sh "git checkout sanjeeb"
                 sh "docker build -t jaibw/website004:${env.BUILD_TAG} ."
             }
         }
